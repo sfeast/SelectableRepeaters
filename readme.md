@@ -10,7 +10,7 @@ Version
 About
 -----
 
-These are repeater controls for Enyo 2 that allows for selectable rows. The SelectableRepeater kind allows for single row selections while the MultiSelectableRepeater kind allows for multiple row selections.
+These are repeater controls for Enyo 2 that allow for selectable rows. The SelectableRepeater kind allows for single row selections while the MultiSelectableRepeater kind allows for multiple row selections.
 
 
 How to Use
