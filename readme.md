@@ -57,8 +57,8 @@ Methods
 Demos
 -----
 
-- http://apps.stevenf.webfactional.com/examples/enyo/SelectableRepeaters/examples/SelectableRepeater/
-- http://apps.stevenf.webfactional.com/examples/enyo/SelectableRepeaters/examples/MultiSelectableRepeater/
+- http://apps.stevenf.webfactional.com/enyo/examples/SelectableRepeaters/examples/SelectableRepeater/
+- http://apps.stevenf.webfactional.com/enyo/examples/SelectableRepeaters/examples/MultiSelectableRepeater/
 
 Changelog
 ---------
