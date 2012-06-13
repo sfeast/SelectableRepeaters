@@ -4,7 +4,7 @@ SelectableRepeater for Enyo 2
 Version
 -----
 
-1.0
+1.1
 
 
 About
@@ -35,7 +35,7 @@ Then instantiate the SelectableRepeater or MultiSelectableRepeater kind:
 
 Where {content: "blah"}	can be replaced with custom components, controls, etc - just as with a standard Repeater.
 		
-Note that the example uses the Fittable & Onyx libs, but they aren't required for use of SelectableRepeater.
+Note that the examples use the Fittable & Onyx libs, but they aren't required for use of SelectableRepeater.
 
 
 Properties
@@ -64,3 +64,4 @@ Changelog
 ---------
 
 1.0 - Initial release
+1.1 - Updated to work with Repeater changes in previous Enyo build

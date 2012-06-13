@@ -1,6 +1,6 @@
 // Define a kind for the item to use in the SelectableRepeater.
 enyo.kind({
-    name: "Item",
+    name: "MyItem",
     events: {
         onItemTap: "",
     },
@@ -23,8 +23,8 @@ enyo.kind({
         {name: "info", content: "No buttons clicked yet", style: "padding: 8px;"},
 
 			{name: "scroll", kind: "Scroller", fit: true, components: [
-		        {name: "rep", kind: "sfeast.SelectableRepeater", rows: 10, onSetupRow: "setupEntries", components:[
-		           {kind: "Item"}
+		        {name: "rep", kind: "sfeast.SelectableRepeater", count: 10, onSetupItem: "setupEntries", components:[
+		           {kind: "MyItem"}
 		        ]}
 	        ]},
 
@@ -40,18 +40,18 @@ enyo.kind({
 		]}
 	],
     handlers: {
-        onItemTap: "itemTap" //deals with our item button presses (ie not specific to SelectableRepeater)
+        onItemTap: "itemTap", //deals with our item button presses (ie not specific to SelectableRepeater)
     },
     create: function() {
         this.inherited(arguments);
         this.$.rep.build();
     },
     setupEntries: function(inSender, inEvent) {
-        inEvent.row.$.item.$.control.setContent("Row " + inEvent.index);
-        inEvent.row.$.item.$.button.setContent("Button " + inEvent.index);
+        inEvent.item.$.myItem.$.control.setContent("Row " + inEvent.index);
+        inEvent.item.$.myItem.$.button.setContent("Button " + inEvent.index);
     },
-    itemTap: function(inSender, inEvent) {	
-		var index = inEvent.originator.owner.rowIndex;
+    itemTap: function(inSender, inEvent) {
+		var index = inEvent.index;
         // originator is the Item, it's owner is a wrapper object that repeater creates
         this.$.info.setContent("Button " + index + " clicked");
     },		
