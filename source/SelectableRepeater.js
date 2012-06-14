@@ -6,7 +6,6 @@ enyo.kind({
 		selectColor: "lightblue" //select color (used for row background color)
 	},
 	handlers: {
-		onRowSelected: "rowSelected", //called when one of our proxy objects is tapped
 		ontap: "rowSelected"
 	},
 	//override the standard Repeater's build function
@@ -63,9 +62,6 @@ enyo.kind({
 enyo.kind({
 	name: "sfeast.OwnerProxy",
 	kind: "enyo.OwnerProxy",
-	events: {
-		onRowSelected: ""
-	},
 	published: {
 		selected: "",
 		selectedColor: ""
