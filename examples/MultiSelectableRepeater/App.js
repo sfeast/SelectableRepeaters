@@ -1,8 +1,8 @@
-// Define a kind for the item to use in the SelectableRepeater.
+// Define a kind for the item to use in the MultiSelectableRepeater.
 enyo.kind({
     name: "MyItem",
     events: {
-        onItemTap: "",
+        onButtonTap: "",
     },
 	style: "height: 60px;border-top:1px white solid;border-bottom:1px lightgray solid",
     components: [
@@ -10,7 +10,7 @@ enyo.kind({
 			{kind: "Button", ontap: "buttonTap", style: "margin-left:50px;margin-top:15px;"}
     ],
 	buttonTap: function() {
-		this.doItemTap();
+		this.doButtonTap();
 		return true; // prevents a button tap from interferring with row selection
 	}
 });
@@ -41,7 +41,7 @@ enyo.kind({
 		]}
 	],
     handlers: {
-        onItemTap: "itemTap" //deals with our item button presses (ie not specific to SelectableRepeater)
+        onButtonTap: "buttonTap" //deals with our item button presses (ie not specific to SelectableRepeater)
     },
     create: function() {
         this.inherited(arguments);
@@ -51,9 +51,8 @@ enyo.kind({
         inEvent.item.$.myItem.$.control.setContent("Row " + inEvent.index);
         inEvent.item.$.myItem.$.button.setContent("Button " + inEvent.index);
     },
-    itemTap: function(inSender, inEvent) {	
+    buttonTap: function(inSender, inEvent) {	
 		var index = inEvent.index;
-        // originator is the Item, it's owner is a wrapper object that repeater creates
         this.$.info.setContent("Button " + index + " clicked");
     },		
 	toggleItem: function() {

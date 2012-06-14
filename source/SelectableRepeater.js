@@ -6,7 +6,8 @@ enyo.kind({
 		selectColor: "lightblue" //select color (used for row background color)
 	},
 	handlers: {
-		onRowSelected: "rowSelected" //called when one of our proxy objects is tapped
+		onRowSelected: "rowSelected", //called when one of our proxy objects is tapped
+		ontap: "rowSelected"
 	},
 	//override the standard Repeater's build function
 	build: function() {
@@ -69,18 +70,11 @@ enyo.kind({
 		selected: "",
 		selectedColor: ""
 	},
-	handlers: {
-		ontap: "rowSelected"
-	},
-	//send the rowSelected event for the owning repeater
-	rowSelected: function(inSender, inEvent) {
-		this.doRowSelected(inSender, inEvent);
-	},
 	selectedChanged: function(inSender, inEvent){
 		var highlight = this.selected ? this.selectedColor : null;
-		this.children[0].applyStyle("background-color", this.selected ? this.selectedColor : null);
+		this.controlAtIndex(0).applyStyle("background-color", this.selected ? this.selectedColor : null);
 	},
 	selectedColorChanged: function(oldValue){
-		this.children[0].applyStyle("background-color", this.selected ? this.selectedColor : null);
+		this.controlAtIndex(0).applyStyle("background-color", this.selected ? this.selectedColor : null);
 	}
 });
